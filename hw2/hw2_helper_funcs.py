@@ -1,3 +1,9 @@
+## Python translations of some MATLAB functions contained in Per Christian Hansen's regtools package.
+## These have not been thoroughly tested to reproduce the MATLAB (only tested this on a few examples).
+## Use at your own risk!
+## Jonathan Lindbloom, 10/16/24
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -148,43 +154,3 @@ def count_sign_switches(vec):
     return sign_switches
 
 
-
-
-
-
-
-# def shaw(s,t):
-#     """Kernel function for problem 3.6.
-#     """
-
-#     fac1 = (np.cos(s) + np.cos(t))**2
-#     numerator = np.sin(np.pi*(np.sin(s) + np.sin(t)))
-#     denominator = np.pi*(np.sin(s) + np.sin(t))
-#     fac2 = (numerator/denominator)**2
-#     result = fac1*fac2
-    
-#     return result
-
-
-# def solution36(t):
-#     """Solution function for problem 3.6.
-#     """
-#     result = 2*np.exp(-6*((t - 0.8)**2)) + np.exp(-2*((t+0.5)**2))
-#     return result
-
-
-# def build_problem36_data(n):
-#     """Shaw matrix.
-#     """
-
-#     tt = np.asarray([ (j - 0.5)/n for j in range(1, n+1) ])
-#     ss = tt.copy()
-
-#     A = np.zeros((n,n))
-#     for i in range(n):
-#         for j in range(n):
-#             A[i,j] = (1.0/n)*shaw(ss[i], tt[j])
-
-#     x_exact = solution36(tt)
-
-#     return A, x_exact
